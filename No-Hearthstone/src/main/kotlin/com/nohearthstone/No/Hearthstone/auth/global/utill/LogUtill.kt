@@ -1,4 +1,4 @@
-package com.nohearthstone.No.Hearthstone
+package com.nohearthstone.No.Hearthstone.auth.global.utill
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
