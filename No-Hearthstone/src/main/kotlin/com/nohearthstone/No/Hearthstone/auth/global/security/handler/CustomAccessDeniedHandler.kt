@@ -2,7 +2,7 @@ package com.nohearthstone.No.Hearthstone.auth.global.security.handler
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.nohearthstone.No.Hearthstone.auth.global.security.dto.ExceptionResponse
-import com.nohearthstone.No.Hearthstone.getLogger
+import com.nohearthstone.No.Hearthstone.auth.global.utill.getLogger
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.http.HttpStatus
