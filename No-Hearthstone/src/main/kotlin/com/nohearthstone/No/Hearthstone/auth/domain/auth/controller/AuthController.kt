@@ -1,6 +1,8 @@
 package com.nohearthstone.No.Hearthstone.auth.domain.auth.controller
 
 import com.nohearthstone.No.Hearthstone.auth.domain.auth.controller.dto.request.UserJoinRequest
+import com.nohearthstone.No.Hearthstone.auth.domain.auth.controller.dto.request.UserLoginRequest
+import com.nohearthstone.No.Hearthstone.auth.domain.auth.controller.dto.response.UserLoginResponse
 import com.nohearthstone.No.Hearthstone.auth.domain.auth.service.AuthService
 import jakarta.validation.Valid
 import org.springframework.http.ResponseEntity
@@ -18,5 +20,10 @@ class AuthController (
     fun joinMember(@RequestBody @Valid userJoinRequest: UserJoinRequest): ResponseEntity<Void> {
         authService.joinMember(userJoinRequest)
         return ResponseEntity.ok().build()
+    }
+
+    @PostMapping("/login")
+    fun login(@RequestBody @Valid userLoginRequest: UserLoginRequest): ResponseEntity<UserLoginResponse> {
+        return ResponseEntity.ok(authService.loginMember(userLoginRequest))
     }
 }
