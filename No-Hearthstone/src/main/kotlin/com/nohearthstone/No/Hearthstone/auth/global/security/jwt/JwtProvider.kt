@@ -20,7 +20,7 @@ class JwtProvider(
     private val userDetailsService: UserDetailsService,
 
     @Value("\${spring.jwt.access-key}") private val accessKey: String,
-    @Value("\$(spring.jwt.access-expired") private val accessExpireTime: Long,
+    @Value("\${spring.jwt.access-expired}") private val accessExpireTime: Long,
     @Value("\${spring.jwt.refresh-expired}") private val refreshExpireTime: Long
 ) {
     fun generateToken(id: UUID): UserLoginResponse {
@@ -51,7 +51,7 @@ class JwtProvider(
     }
 
     private fun getTokenSubject(subject: String?): String {
-        return ""
+        return getClaims(subject).subject
     }
 
     fun getClaims(token: String?): Claims {
